@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>SDS Front Desk Resource Hub</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			background: #f5f5f5;
+		}
+
+		header {
+			background: #1e88e5;
+			color: white;
+			padding: 16px 24px;
+		}
+
+		header h1 {
+			margin: 0;
+			font-size: 24px;
+		}
+
+		.tabs {
+			display: flex;
+			background: #eeeeee;
+			border-bottom: 1px solid #ccc;
+		}
+
+		.tab {
+			padding: 12px 20px;
+			cursor: pointer;
+			border-right: 1px solid #ddd;
+			transition: background 0.2s;
+		}
+
+		.tab:hover {
+			background: #e0e0e0;
+		}
+
+		.tab.active {
+			background: white;
+			border-bottom: 2px solid #1e88e5;
+			font-weight: bold;
+		}
+
+		.tab-content {
+			display: none;
+			padding: 20px;
+			background: white;
+		}
+
+		.tab-content.active {
+			display: block;
+		}
+
+		ul.resources {
+			list-style: none;
+			padding: 0;
+		}
+
+		ul.resources li {
+			margin-bottom: 8px;
+		}
+
+		ul.resources a {
+			color: #1e88e5;
+			text-decoration: none;
+		}
+
+		ul.resources a:hover {
+			text-decoration: underline;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>SDS Front Desk Resource Hub</h1>
+		<p>Essential tools, scheduling aids, communication guides, and office resources.</p>
+	</header>
+
+	<div class="tabs">
+		<div class="tab active" data-tab="logs">Logs</div>
+		<div class="tab" data-tab="schedule2drive">Schedule2Drive</div>
+		<div class="tab" data-tab="driving-tests">Driving Tests</div>
+		<div class="tab" data-tab="private-lessons">Private Lessons</div>
+		<div class="tab" data-tab="registration">Registration</div>
+		<div class="tab" data-tab="outlook">Outlook</div>
+	</div>
+
+	<div id="logs" class="tab-content active">
+		<h2>Logs</h2>
+		<ul class="resources">
+			<li><a href="https://calendar.google.com" target="_blank" rel="noopener noreferrer">Google Calendar</a> – Manage meetings and reminders.</li>
+			<li><a href="https://outlook.office.com/calendar" target="_blank" rel="noopener noreferrer">Outlook Calendar</a> – Office scheduling and invites.</li>
+			<li><a href="https://www.when2meet.com" target="_blank" rel="noopener noreferrer">When2Meet</a> – Find common availability.</li>
+			<li><a href="https://www.timeanddate.com" target="_blank" rel="noopener noreferrer">Time and Date</a> – Time zones, calculators, and planners.</li>
+		</ul>
+	</div>
+
+	<div id="schedule2drive" class="tab-content">
+		<h2>Schedule2Drive</h2>
+		<ul class="resources">
+			<li><a href="https://mail.google.com" target="_blank" rel="noopener noreferrer">Gmail</a> – Email communication.</li>
+			<li><a href="https://outlook.office.com/mail" target="_blank" rel="noopener noreferrer">Outlook Mail</a> – Professional email management.</li>
+			<li><a href="https://slack.com" target="_blank" rel="noopener noreferrer">Slack</a> – Team messaging and channels.</li>
+			<li><a href="https://zoom.us" target="_blank" rel="noopener noreferrer">Zoom</a> – Video meetings and scheduling.</li>
+		</ul>
+	</div>
+
+	<div id="driving-tests" class="tab-content">
+		<h2>Driving Tests</h2>
+		<ul class="resources">
+			<li><a href="https://www.microsoft.com/en-us/microsoft-365/word" target="_blank" rel="noopener noreferrer">Microsoft Word</a> – Document creation.</li>
+			<li><a href="https://www.microsoft.com/en-us/microsoft-365/excel" target="_blank" rel="noopener noreferrer">Excel</a> – Spreadsheets and data tracking.</li>
+			<li><a href="https://www.canva.com" target="_blank" rel="noopener noreferrer">Canva</a> – Flyers, forms, and visual materials.</li>
+			<li><a href="https://www.adobe.com/acrobat" target="_blank" rel="noopener noreferrer">Adobe Acrobat</a> – PDF editing and signing.</li>
+		</ul>
+	</div>
+
+	<div id="private-lessons" class="tab-content">
+		<h2>Private Lessons</h2>
+		<ul class="resources">
+			<li><a href="https://www.coursera.org" target="_blank" rel="noopener noreferrer">Coursera</a> – Courses on office administration.</li>
+			<li><a href="https://www.udemy.com" target="_blank" rel="noopener noreferrer">Udemy</a> – Administrative skills training.</li>
+			<li><a href="https://www.linkedin.com/learning" target="_blank" rel="noopener noreferrer">LinkedIn Learning</a> – Workplace communication &amp; organization.</li>
+			<li><a href="https://www.thebalancecareers.com" target="_blank" rel="noopener noreferrer">The Balance Careers</a> – Resume tips and career advice.</li>
+		</ul>
+	</div>
+
+	<div id="registration" class="tab-content">
+		<h2>Registration</h2>
+		<ul class="resources">
+			<li><a href="https://www.coursera.org" target="_blank" rel="noopener noreferrer">Coursera</a> – Courses on office administration.</li>
+			<li><a href="https://www.udemy.com" target="_blank" rel="noopener noreferrer">Udemy</a> – Administrative skills training.</li>
+			<li><a href="https://www.linkedin.com/learning" target="_blank" rel="noopener noreferrer">LinkedIn Learning</a> – Workplace communication &amp; organization.</li>
+			<li><a href="https://www.thebalancecareers.com" target="_blank" rel="noopener noreferrer">The Balance Careers</a> – Resume tips and career advice.</li>
+		</ul>
+	</div>
+
+	<div id="outlook" class="tab-content">
+		<h2>Outlook</h2>
+		<ul class="resources">
+			<li><a href="https://outlook.office.com/mail" target="_blank" rel="noopener noreferrer">Outlook Mail</a> – Professional email management.</li>
+			<li><a href="https://outlook.office.com/calendar" target="_blank" rel="noopener noreferrer">Outlook Calendar</a> – Office scheduling and invites.</li>
+			<li><a href="https://outlook.office.com/people" target="_blank" rel="noopener noreferrer">Outlook People</a> – Contacts and communication.</li>
+			<li><a href="https://outlook.office.com/tasks" target="_blank" rel="noopener noreferrer">Outlook Tasks</a> – Track to-dos and deadlines.</li>
+		</ul>
+	</div>
+
+	<script>
+		const tabs = document.querySelectorAll('.tab');
+		const contents = document.querySelectorAll('.tab-content');
+
+		tabs.forEach(tab => {
+			tab.addEventListener('click', () => {
+				const targetId = tab.getAttribute('data-tab');
+
+				tabs.forEach(t => t.classList.remove('active'));
+				contents.forEach(content => content.classList.remove('active'));
+
+				tab.classList.add('active');
+				document.getElementById(targetId).classList.add('active');
+			});
+		});
+	</script>
+</body>
+</html>
