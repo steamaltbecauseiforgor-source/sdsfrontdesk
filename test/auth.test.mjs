@@ -6,8 +6,14 @@ test('auth.ts exists and exports default and config', () => {
   const content = readFileSync('netlify/edge-functions/auth.ts', 'utf8');
   assert.ok(content.includes('export default async'), 'Should have default export');
   assert.ok(content.includes('export const config'), 'Should have config export');
-  assert.ok(content.includes('sdsc3032'), 'Should contain specified username');
-  assert.ok(content.includes('texasdpssds'), 'Should contain specified password');
+  assert.ok(
+    content.includes('SITE_AUTH_USERNAME') || content.includes('AUTH_USERNAME'),
+    'Should reference username environment variable'
+  );
+  assert.ok(
+    content.includes('SITE_AUTH_PASSWORD') || content.includes('AUTH_PASSWORD'),
+    'Should reference password environment variable'
+  );
   assert.ok(content.includes('sds_auth_session'), 'Should use session cookie');
 });
 
@@ -31,4 +37,11 @@ test('index.html has accessible and visible sign out buttons in header and foote
   assert.ok(content.includes('logout-btn'), 'Should include styled logout button class');
   assert.ok(content.includes('footer-signout-link'), 'Should include footer sign out link');
   assert.ok(content.includes('Sign Out'), 'Should include Sign Out text');
+});
+
+test('.gitignore contains environment variable patterns', () => {
+  const content = readFileSync('.gitignore', 'utf8');
+  assert.ok(content.includes('.env'), 'Should ignore .env');
+  assert.ok(content.includes('.env.local'), 'Should ignore .env.local');
+  assert.ok(content.includes('.env*.local'), 'Should ignore .env*.local');
 });
