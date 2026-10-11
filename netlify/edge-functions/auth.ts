@@ -2,14 +2,24 @@ import type { Context, Config } from "@netlify/edge-functions";
 
 const COOKIE_NAME = "sds_auth_session";
 
-// Secret used to sign session cookies. Falls back to a deterministic string if not set in env.
+// Secret used to sign session cookies. Falls back to a default token if not set in env.
 function getSecret(): string {
-  return Netlify.env.get("AUTH_SECRET") || "sds-front-desk-hub-secure-auth-token-2026";
+  return (
+    Netlify.env.get("SITE_AUTH_SECRET") ||
+    Netlify.env.get("AUTH_SECRET") ||
+    "sds-front-desk-hub-auth-session-key"
+  );
 }
 
 function getValidCredentials(): { username: string; password: string } {
-  const username = Netlify.env.get("AUTH_USERNAME") || "sdsc3032";
-  const password = Netlify.env.get("AUTH_PASSWORD") || "texasdpssds";
+  const username =
+    Netlify.env.get("SITE_AUTH_USERNAME") ||
+    Netlify.env.get("AUTH_USERNAME") ||
+    "";
+  const password =
+    Netlify.env.get("SITE_AUTH_PASSWORD") ||
+    Netlify.env.get("AUTH_PASSWORD") ||
+    "";
   return { username, password };
 }
 
@@ -314,6 +324,8 @@ export default async (req: Request, context: Context) => {
     }
 
     if (
+      credentials.username &&
+      credentials.password &&
       username.trim() === credentials.username &&
       password === credentials.password
     ) {
