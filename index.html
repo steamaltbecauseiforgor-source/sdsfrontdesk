@@ -15,11 +15,78 @@
 			background: #1e88e5;
 			color: white;
 			padding: 16px 24px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			gap: 12px;
 		}
 
 		header h1 {
 			margin: 0;
 			font-size: 24px;
+		}
+
+		header p {
+			margin: 4px 0 0;
+			opacity: 0.9;
+			font-size: 14px;
+		}
+
+		.header-actions {
+			display: flex;
+			align-items: center;
+			gap: 12px;
+		}
+
+		.user-badge {
+			display: inline-flex;
+			align-items: center;
+			background: rgba(255, 255, 255, 0.18);
+			color: #ffffff;
+			font-size: 13px;
+			padding: 6px 12px;
+			border-radius: 20px;
+			border: 1px solid rgba(255, 255, 255, 0.3);
+			font-weight: 500;
+		}
+
+		.user-badge .indicator-dot {
+			width: 8px;
+			height: 8px;
+			border-radius: 50%;
+			background: #4ade80;
+			margin-right: 7px;
+			box-shadow: 0 0 6px #4ade80;
+		}
+
+		.header-actions .logout-btn {
+			display: inline-flex;
+			align-items: center;
+			gap: 6px;
+			background: #ffffff;
+			color: #1e88e5;
+			padding: 8px 18px;
+			border-radius: 6px;
+			text-decoration: none;
+			font-size: 14px;
+			font-weight: 700;
+			transition: all 0.2s ease;
+			border: none;
+			cursor: pointer;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+		}
+
+		.header-actions .logout-btn:hover {
+			background: #f0f7ff;
+			color: #1565c0;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.18);
+			transform: translateY(-1px);
+			text-decoration: none;
+		}
+
+		.header-actions .logout-btn:active {
+			transform: translateY(0);
 		}
 
 		.tabs {
@@ -72,12 +139,48 @@
 		ul.resources a:hover {
 			text-decoration: underline;
 		}
+
+		.hub-footer {
+			margin-top: 48px;
+			padding: 20px 24px;
+			background: #eef2f6;
+			border-top: 1px solid #dce2e8;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			font-size: 13px;
+			color: #555;
+			flex-wrap: wrap;
+			gap: 12px;
+		}
+
+		.hub-footer a.footer-signout-link {
+			color: #1e88e5;
+			font-weight: 600;
+			text-decoration: none;
+			display: inline-flex;
+			align-items: center;
+			gap: 4px;
+		}
+
+		.hub-footer a.footer-signout-link:hover {
+			text-decoration: underline;
+		}
 	</style>
 </head>
 <body>
 	<header>
-		<h1>SDS Front Desk Resource Hub</h1>
-		<p>Essential tools, scheduling aids, communication guides, and office resources.</p>
+		<div>
+			<h1>SDS Front Desk Resource Hub</h1>
+			<p>Essential tools, scheduling aids, communication guides, and office resources.</p>
+		</div>
+		<div class="header-actions">
+			<span class="user-badge"><span class="indicator-dot"></span>Front Desk Staff</span>
+			<a href="/auth/logout" class="logout-btn" title="Sign out of SDS Front Desk Hub">
+				<span>Sign Out</span>
+				<span aria-hidden="true">&rarr;</span>
+			</a>
+		</div>
 	</header>
 
 	<div class="tabs">
@@ -148,6 +251,11 @@
 			<li><a href="https://outlook.office.com/tasks" target="_blank" rel="noopener noreferrer">Outlook Tasks</a> – Track to-dos and deadlines.</li>
 		</ul>
 	</div>
+
+	<footer class="hub-footer">
+		<span>Southlake Driving School &bull; Front Desk Resource Hub</span>
+		<a href="/auth/logout" class="footer-signout-link" title="Sign out of your session">Sign Out &rarr;</a>
+	</footer>
 
 	<script>
 		const tabs = document.querySelectorAll('.tab');

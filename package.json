@@ -1,0 +1,9 @@
+{
+  "name": "sdsfrontdesk",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "@netlify/edge-functions": "^2.11.1"
+  }
+}
